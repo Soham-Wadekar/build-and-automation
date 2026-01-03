@@ -1,13 +1,3 @@
-# Project: Daily Project Setup Automator
-
-# When the user runs: `make setup`
-# It should:
-# 1. Clean old artifacts
-# 2. Prepare today’s workspace
-# 3. Log today’s build info
-# 4. Print a final success message
-# And it must execute in the correct order automatically via dependencies.
-
 DATE = $(shell date +%F)
 USERNAME ?= dev
 PROJECT ?= "New Project"
@@ -24,7 +14,7 @@ setup: $(SETUP_STAMP)
 
 clean:
 	@echo "🧹 Cleaning up old artifacts..."
-	@rm -rf workspace_*
+	@rm -rf workspace_* .setup_*
 
 prepare:
 	@echo "🛠️  Preparing workspace..."
